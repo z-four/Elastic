@@ -4,7 +4,8 @@
 
 
 # About
-Over-scrolling effect library for android scrollable views 
+Over-scrolling effect library for android scrollable views
+
 
 <p align="center">
   <img width="270px" src="/images/gif_list.gif">
@@ -22,10 +23,21 @@ recyclerViewBinder.unbind() //unbind elastic effect
 val listViewBinder = list_view.elastic().bind()
 listViewBinder.unbind()
 
+val gridViewBinder = grid_view.elastic().bind()
+gridViewBinder.unbind()
+
+val scrollViewBinder = scroll_view.elastic().bind()
+scrollViewBinder.unbind()
+
+val nestedScrollViewBinder = nested_scroll_view.elastic().bind()
+nestedScrollViewBinder.unbind()
+
+val horizontalScrollViewBinder = horizontal_scroll_view.elastic().bind()
+horizontalScrollViewBinder.unbind()
+
 val viewPagerBinder = view_pager.elastic().bind()
 viewPagerBinder.unbind()
 
-//so on for other scrollable views
 ...
 ```
 
