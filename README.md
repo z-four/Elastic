@@ -1,5 +1,5 @@
-<p align="center"> 
-  <img align="right" height="280px" src="/images/logo.png">
+<p align="right"> 
+  <img height="280px" src="/images/logo.png">
 </p>
 
 
@@ -7,8 +7,9 @@
 Over-scrolling effect library for android scrollable views 
 
 <p align="center">
-  <img width="280px" src="/images/gif_list.gif">
-  <img width="280px" src="/images/gif_rec.gif">
+  <img width="270px" src="/images/gif_list.gif">
+  <img width="270px" src="/images/gif_rec.gif">
+   <img width="270px" src="/images/gif_grid.gif">
 </p>
 
 # How to Use
