@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightGray"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_container_view"
+        android:layout_marginStart="@dimen/recycler_view_fragment_header_margin_left"
+        android:layout_marginEnd="@dimen/recycler_view_fragment_header_margin_left" />
+
+    <FrameLayout
+        android:id="@+id/header_container_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/recycler_view_fragment_header_height"
+        android:layout_marginStart="@dimen/recycler_view_fragment_header_margin_left"
+        android:background="@color/colorLightGray">
+
+        <TextView
+            android:id="@+id/header_text_view"
+            style="@style/SourceSansProSemibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/view_pager"
+            android:textAllCaps="true"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/recycler_view_fragment_text_size" />
+
+    </FrameLayout>
+
+</RelativeLayout>

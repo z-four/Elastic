@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/recycler_view_menu_item_height">
+
+        <TextView
+            android:id="@+id/text_view"
+            style="@style/SourceSansProRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/recycler_view_menu_item_margin_left"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/recycler_view_menu_item_text_size" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/recycler_view_menu_item_divider_height"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/recycler_view_menu_item_divider_margins_horizontal"
+            android:layout_marginRight="@dimen/recycler_view_menu_item_divider_margins_horizontal"
+            android:background="@color/colorDivider" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

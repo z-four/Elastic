@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/recycler_view_item_height"
+        android:background="@drawable/shadow"
+        android:padding="@dimen/recycler_view_item_content_padding">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="@dimen/recycler_view_item_image_width"
+            android:layout_height="@dimen/recycler_view_item_image_height"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/recycler_view_item_image_margin_left"
+            android:background="@drawable/bitcoin_icon" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/recycler_view_item_text_margin_left"
+            android:layout_toRightOf="@id/image_view"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/SourceSansProSemibold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12.34 BTC"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/SourceSansProSemibold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="= 98,475.668 USD"
+                android:textColor="@color/colorLightGrayText"
+                android:textSize="@dimen/recycler_view_item_text_size"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/recycler_view_item_text_price_margin_right"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/SourceSansProRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$7980.20"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/recycler_view_item_text_size" />
+
+            <TextView
+                style="@style/SourceSansProBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="-1.83%"
+                android:textColor="@color/colorRed"
+                android:textSize="@dimen/recycler_view_item_text_size" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

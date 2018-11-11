@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">ElasticSample</string>
+    <string name="menu">Menu</string>
+    <string name="recycler_view">Recycler View</string>
+    <string name="list_view">List View</string>
+
+    <string name="phrase">Phrase</string>
+    <string name="scroll_view">Scroll View</string>
+    <string name="grid_view">Grid View</string>
+    <string name="view_pager">View pager</string>
+    <string name="view">View</string>
+    <string name="nested_scroll_view">Nested scroll view</string>
+    <string name="pato">In June 2006, at only age 16, Pato was signed by Sport Club Internacional to compete in the Campeonato Brasileiro Sub-20. Despite the fact that he was competing against players up to four years older than he was, Pato became top scorer of the competition as Internacional Sub-20 defeated Grêmio 4–0 in the championship\'s final match. Ready to join the Inter 13th team in November that same year, his debut finally happened at the Estádio Palestra Itália against São Paulo team Palmeiras for the Campeonato Brasileiro. Alexandre Pato met and surpassed any and all expectations of what was expected of him as he scored his first professional goal within the first minute of the game. The rest of his participation was spent dribbling and confusing defenders as he made two assists (and almost scoring another himself) to help Internacional rout Palmeiras 4–1. He was substituted off in the 77th minute.
+
+He was included in the Internacional squad that won the 2006 FIFA Club World Cup. During this event, Pato broke Pelé\'s long standing record as he became the youngest ever player to score in a FIFA-organised competition at the age of 17 years and 102 days against African club champions Al-Ahly. Pelé was 17 years and 239 days old when he scored against Wales during the 1958 FIFA World Cup.
+
+Keeping up with his promising figure, Pato debuted at the Campeonato Gaúcho on 24 February against Veranópolis and scored a goal in the 2–1 victory. He also debuted in Copa Libertadores on 28 February against Emelec of Ecuador (also his first game at Beira-Rio) and scored once during the 3–0 thumping. But the biggest highlight of Pato's time with Internacional was during the Recopa Sudamericana, as he helped Internacional win their first ever title of that competition. Against Pachuca of Mexico, he scored one goal in the 2–1 defeat in Mexico. But on the return game on 7 June and with more than 51,000 Colorados present, Pato had a great performance as he scored once to lead the team to win their third international title.</string>
+
+    <array name="views">
+        <item>RecyclerView</item>
+        <item>ScrollView</item>
+        <item>NestedScrollView</item>
+        <item>ListView</item>
+        <item>GridView</item>
+        <item>ViewPager</item>
+    </array>
+</resources>

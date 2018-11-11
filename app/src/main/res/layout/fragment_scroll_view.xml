@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightGray"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/vertical_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/horizontal_scroll_view"
+        android:layout_marginStart="@dimen/recycler_view_fragment_margins_horizontal"
+        android:layout_marginTop="@dimen/vertical_scroll_view_margin_top"
+        android:layout_marginEnd="@dimen/recycler_view_fragment_margins_horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <include layout="@layout/recycler_view_item_layout" />
+
+            <include layout="@layout/recycler_view_item_layout" />
+
+            <include layout="@layout/recycler_view_item_layout" />
+
+            <include layout="@layout/recycler_view_item_layout" />
+
+            <include layout="@layout/recycler_view_item_layout" />
+
+            <include layout="@layout/recycler_view_item_layout" />
+
+            <include layout="@layout/recycler_view_item_layout" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_container_view"
+        android:layout_marginStart="@dimen/recycler_view_fragment_margins_horizontal"
+        android:layout_marginEnd="@dimen/recycler_view_fragment_margins_horizontal"
+        android:background="@color/colorLightGray">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="@dimen/horizontal_scroll_view_item_size"
+                android:layout_height="@dimen/horizontal_scroll_view_item_size"
+                android:background="@drawable/rounded_item_shape">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Item 1" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="@dimen/horizontal_scroll_view_item_size"
+                android:layout_height="@dimen/horizontal_scroll_view_item_size"
+                android:background="@drawable/rounded_item_shape">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Item 2" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="@dimen/horizontal_scroll_view_item_size"
+                android:layout_height="@dimen/horizontal_scroll_view_item_size"
+                android:background="@drawable/rounded_item_shape">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Item 3" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="@dimen/horizontal_scroll_view_item_size"
+                android:layout_height="@dimen/horizontal_scroll_view_item_size"
+                android:background="@drawable/rounded_item_shape">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Item 4" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="@dimen/horizontal_scroll_view_item_size"
+                android:layout_height="@dimen/horizontal_scroll_view_item_size"
+                android:background="@drawable/rounded_item_shape">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Item 5" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="@dimen/horizontal_scroll_view_item_size"
+                android:layout_height="@dimen/horizontal_scroll_view_item_size"
+                android:background="@drawable/rounded_item_shape">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Item 6" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <FrameLayout
+        android:id="@+id/header_container_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/recycler_view_fragment_header_height"
+        android:layout_marginStart="@dimen/recycler_view_fragment_header_margin_left"
+        android:background="@color/colorLightGray">
+
+        <TextView
+            android:id="@+id/header_text_view"
+            style="@style/SourceSansProSemibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/scroll_view"
+            android:textAllCaps="true"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/recycler_view_fragment_text_size" />
+
+    </FrameLayout>
+
+</RelativeLayout>

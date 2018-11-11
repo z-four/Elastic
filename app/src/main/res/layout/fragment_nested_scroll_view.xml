@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightGray"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_container_view"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorLightGray">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="@dimen/simple_image_view_size"
+                    android:layout_height="@dimen/simple_image_view_size"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/android" />
+
+            </FrameLayout>
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/nested_scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/nested_scroll_view_height"
+                android:layout_marginStart="@dimen/recycler_view_fragment_header_margin_left"
+                android:layout_marginTop="@dimen/nested_scroll_view_margin_top"
+                android:layout_marginEnd="@dimen/recycler_view_fragment_header_margin_left">
+
+                <TextView
+                    style="@style/SourceSansProRegular"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/pato" />
+
+            </android.support.v4.widget.NestedScrollView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/header_container_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/recycler_view_fragment_header_height"
+        android:layout_marginStart="@dimen/recycler_view_fragment_header_margin_left"
+        android:background="@color/colorLightGray">
+
+        <TextView
+            android:id="@+id/header_text_view"
+            style="@style/SourceSansProSemibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/nested_scroll_view"
+            android:textAllCaps="true"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/recycler_view_fragment_text_size" />
+
+    </FrameLayout>
+
+</RelativeLayout>

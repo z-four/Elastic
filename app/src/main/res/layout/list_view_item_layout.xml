@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow"
+        android:padding="@dimen/recycler_view_item_content_padding">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/list_view_item_text_margin_left"
+            android:layout_toEndOf="@id/image_view"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_text_view"
+                style="@style/SourceSansProBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="98,475.668 USD"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/recycler_view_item_text_size"/>
+
+            <TextView
+                android:id="@+id/description_text_view"
+                style="@style/SourceSansProRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="98,475.668 USD"
+                android:textColor="@color/colorLightGrayText"
+                android:textSize="@dimen/recycler_view_item_text_size"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

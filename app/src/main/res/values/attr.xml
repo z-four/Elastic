@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SourceSansProSemibold">
+        <item name="fontPath">fonts/SourceSansPro-Semibold.otf</item>
+    </style>
+
+    <style name="SourceSansProRegular">
+        <item name="fontPath">fonts/SourceSansPro-Regular.otf</item>
+    </style>
+
+    <style name="SourceSansProBold">
+        <item name="fontPath">fonts/SourceSansPro-Bold.otf</item>
+    </style>
+
+</resources>
