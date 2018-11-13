@@ -51,12 +51,14 @@ abstract class BaseElasticEffect(view: IElasticView) : IElasticViewBinder, View.
     private val interpolator = DecelerateInterpolator()
     protected val mStateAttrs = StateAttrs()
     protected val mMotionAttrs = MotionAttrs()
-    protected val mViewAttrs: ViewAttrs
+    protected var mViewAttrs: ViewAttrs
+    protected var mOldState = IElasticViewBinder.State.Idle
 
     init { mViewAttrs = ViewAttrs(view) }
 
-    //--- OnTouch listener
+    //--- Listeners
 
+    override var listener: IElasticViewBinder.StateListener? = null
     override fun onTouch(view: View?, event: MotionEvent?) = false
 
     //--- Animation
@@ -70,8 +72,18 @@ abstract class BaseElasticEffect(view: IElasticView) : IElasticViewBinder, View.
 
     override fun onAnimationRepeat(p0: Animator?) {}
     override fun onAnimationCancel(p0: Animator?) {}
-    override fun onAnimationEnd(p0: Animator?) { mStateAttrs.bounceEnable = true }
-    override fun onAnimationStart(p0: Animator?) { mStateAttrs.bounceEnable = false }
+    override fun onAnimationEnd(p0: Animator?) {
+        val state = IElasticViewBinder.State.Idle
+        mOldState = state
+        listener?.onStateChanged(state)
+        mStateAttrs.bounceEnable = true
+    }
+    override fun onAnimationStart(p0: Animator?) {
+        val state = IElasticViewBinder.State.Bounce
+        mOldState = state
+        listener?.onStateChanged(state)
+        mStateAttrs.bounceEnable = false
+    }
 
     //--- IBinder
 
@@ -83,6 +95,7 @@ abstract class BaseElasticEffect(view: IElasticView) : IElasticViewBinder, View.
     override fun unbind() {
         if (mStateAttrs.currentState != MotionEvent.ACTION_CANCEL ||
                 mStateAttrs.currentState != MotionEvent.ACTION_UP && mStateAttrs.bounceEnable) {
+            listener = null
             mViewAttrs.getView().setOnTouchListener(null)
         }
     }

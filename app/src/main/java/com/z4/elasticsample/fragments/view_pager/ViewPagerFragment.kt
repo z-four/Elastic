@@ -33,6 +33,17 @@ class ViewPagerFragment : Fragment() {
         view_pager.adapter = ViewPagerAdapter(childFragmentManager)
 
         elasticViewBinder = view_pager.elastic().bind()
+        elasticViewBinder?.listener = object : IElasticViewBinder.StateListener {
+
+            override fun onStateChanged(state: IElasticViewBinder.State) {
+                when(state) {
+                    IElasticViewBinder.State.Idle -> Log.wtf("aa", "Idle")
+                    IElasticViewBinder.State.Bounce -> Log.wtf("aa", "Bounce")
+                    IElasticViewBinder.State.DraggingStart -> Log.wtf("aa", "DraggingStart")
+                    IElasticViewBinder.State.DraggingEnd -> Log.wtf("aa", "DraggingEnd")
+                }
+            }
+        }
     }
 
     override fun onDestroyView() {

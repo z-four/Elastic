@@ -4,6 +4,7 @@ import android.support.v4.view.ViewCompat
 import android.view.MotionEvent
 import android.view.View
 import com.z4.elastic.IElasticView
+import com.z4.elastic.IElasticViewBinder
 
 class VerticalElasticEffect(view: IElasticView) : BaseElasticEffect(view) {
 
@@ -39,8 +40,14 @@ class VerticalElasticEffect(view: IElasticView) : BaseElasticEffect(view) {
                 view.parent?.requestDisallowInterceptTouchEvent(true)
 
                 if (mStateAttrs.scrollStarted) {
-                    ViewCompat.setTranslationY(view, mMotionAttrs.originView +
-                            mMotionAttrs.originLast)
+                    val value = mMotionAttrs.originView + mMotionAttrs.originLast
+                    val state = if (value > 0) IElasticViewBinder.State.DraggingEnd else
+                        IElasticViewBinder.State.DraggingStart
+                    if (mOldState != state) {
+                        listener?.onStateChanged(state)
+                        mOldState = state
+                    }
+                    ViewCompat.setTranslationY(view, value)
                 }
                 return true
             }

@@ -3,6 +3,7 @@ package com.z4.elasticsample.fragments
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,6 +34,17 @@ class ListViewFragment : Fragment() {
         list_view.adapter = ListViewAdapter(items = getItems())
 
         elasticViewBinder = list_view.elastic().bind()
+        elasticViewBinder?.listener = object : IElasticViewBinder.StateListener {
+
+            override fun onStateChanged(state: IElasticViewBinder.State) {
+                when(state) {
+                    IElasticViewBinder.State.Idle -> Log.wtf("aa", "Idle")
+                    IElasticViewBinder.State.Bounce -> Log.wtf("aa", "Bounce")
+                    IElasticViewBinder.State.DraggingStart -> Log.wtf("aa", "DraggingStart")
+                    IElasticViewBinder.State.DraggingEnd -> Log.wtf("aa", "DraggingEnd")
+                }
+            }
+        }
     }
 
     override fun onDestroyView() {

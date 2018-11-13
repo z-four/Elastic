@@ -2,9 +2,11 @@ package com.z4.elastic.effects
 
 import android.annotation.SuppressLint
 import android.support.v4.view.ViewCompat
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import com.z4.elastic.IElasticView
+import com.z4.elastic.IElasticViewBinder
 
 class HorizontalElasticEffect(view: IElasticView) : BaseElasticEffect(view) {
 
@@ -41,8 +43,15 @@ class HorizontalElasticEffect(view: IElasticView) : BaseElasticEffect(view) {
                 view.parent?.requestDisallowInterceptTouchEvent(true)
 
                 if (mStateAttrs.scrollStarted) {
-                    ViewCompat.setTranslationX(view, mMotionAttrs.originView +
-                            mMotionAttrs.originLast)
+                    val value = mMotionAttrs.originView + mMotionAttrs.originLast
+                    val state = if (value > 0) IElasticViewBinder.State.DraggingEnd else
+                        IElasticViewBinder.State.DraggingStart
+                    if (mOldState != state) {
+                        listener?.onStateChanged(state)
+                        mOldState = state
+                    }
+
+                    ViewCompat.setTranslationX(view, value)
                 }
                 return true
             }

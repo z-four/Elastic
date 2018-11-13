@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.z4.elasticsample.R
 import android.R.attr.defaultValue
 import android.R.attr.key
+import android.graphics.Color
 import kotlinx.android.synthetic.main.fragment_view_pager_item.*
 
 
@@ -40,6 +41,14 @@ class ViewPagerItemFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         text_view.text = "Item $index"
+        val color = when(index) {
+            1 -> Color.parseColor("#ff7373")
+            0 -> Color.parseColor("#3399ff")
+            else -> Color.parseColor("#66cdaa")
+        }
+
+        container.setBackgroundColor(color)
     }
 }
