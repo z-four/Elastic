@@ -45,7 +45,7 @@ viewPagerBinder.unbind()
 
 ```kotlin
 val someViewBinder = some_view.elastic().bind()
-someViewBinder?.listener = object : IElasticViewBinder.StateListener {
+someViewBinder!!.listener = object : IElasticViewBinder.StateListener {
 
             override fun onStateChanged(state: IElasticViewBinder.State) {
                 when(state) {
@@ -55,7 +55,7 @@ someViewBinder?.listener = object : IElasticViewBinder.StateListener {
                     IElasticViewBinder.State.DraggingEnd -> print("DraggingEnd")
                 }
             }
-        }
+        } 
 ...
 ```
 
