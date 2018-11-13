@@ -14,6 +14,7 @@ Over-scrolling effect library for android scrollable views
 </p>
 
 # How to Use
+#### Elastic effect
 Kotlin extensions are used to bind the elastic effect to the view 
 
 ```kotlin
@@ -38,6 +39,23 @@ horizontalScrollViewBinder.unbind()
 val viewPagerBinder = view_pager.elastic().bind()
 viewPagerBinder.unbind()
 
+...
+```
+#### State listener
+
+```kotlin
+val someViewBinder = some_view.elastic().bind()
+someViewBinder?.listener = object : IElasticViewBinder.StateListener {
+
+            override fun onStateChanged(state: IElasticViewBinder.State) {
+                when(state) {
+                    IElasticViewBinder.State.Idle -> print("Idle")
+                    IElasticViewBinder.State.Bounce -> print("Bounce")
+                    IElasticViewBinder.State.DraggingStart -> print("DraggingStart")
+                    IElasticViewBinder.State.DraggingEnd -> print("DraggingEnd")
+                }
+            }
+        }
 ...
 ```
 
