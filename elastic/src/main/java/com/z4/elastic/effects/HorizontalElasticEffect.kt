@@ -15,6 +15,7 @@ class HorizontalElasticEffect(view: IElasticView) : BaseElasticEffect(view) {
         if (view == null || event == null) return false
         if (!mStateAttrs.bounceEnable) return true
         mEvents.add(event.action)
+        Log.wtf("aaa", "stop = " + event.action)
 
         mStateAttrs.currentState = event.action
         when (event.action) {
