@@ -14,15 +14,14 @@ class HorizontalElasticEffect(view: IElasticView) : BaseElasticEffect(view) {
     override fun onTouch(view: View?, event: MotionEvent?): Boolean {
         if (view == null || event == null) return false
         if (!mStateAttrs.bounceEnable) return true
+        mEvents.add(event.action)
 
         mStateAttrs.currentState = event.action
-
         when (event.action) {
 
             MotionEvent.ACTION_DOWN -> {
                 mMotionAttrs.originView = ViewCompat.getTranslationX(view)
                 mMotionAttrs.originMotion = event.rawX
-
                 mStateAttrs.canScrolling = mViewAttrs.canScrollHorizontal(mMotionAttrs.originLast)
 
                 return if (mStateAttrs.canScrolling) false
@@ -33,6 +32,13 @@ class HorizontalElasticEffect(view: IElasticView) : BaseElasticEffect(view) {
             }
 
             MotionEvent.ACTION_MOVE -> {
+                if (!mEvents.contains(MotionEvent.ACTION_DOWN)) {
+                    mMotionAttrs.originView = ViewCompat.getTranslationX(view)
+                    mMotionAttrs.originMotion = event.rawX
+                    mStateAttrs.canScrolling = mViewAttrs.canScrollHorizontal(mMotionAttrs.originLast)
+
+                    mEvents.add(MotionEvent.ACTION_DOWN)
+                }
                 mMotionAttrs.originLast = (event.rawX - mMotionAttrs.originMotion) /
                         DEFAULT_DRAG_RATIO_VALUE
 
@@ -57,7 +63,11 @@ class HorizontalElasticEffect(view: IElasticView) : BaseElasticEffect(view) {
             }
 
             MotionEvent.ACTION_CANCEL, MotionEvent.ACTION_UP -> {
-
+                if (!mEvents.contains(MotionEvent.ACTION_DOWN)) {
+                    mEvents.clear()
+                    return true
+                }
+                mEvents.clear()
                 if (mStateAttrs.canScrolling) {
                     if (mStateAttrs.currentState != MotionEvent.ACTION_MOVE) return false
                     return !mStateAttrs.scrollStarted

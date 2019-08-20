@@ -6,9 +6,9 @@ import android.util.Property
 import android.view.MotionEvent
 import android.view.View
 import android.view.animation.DecelerateInterpolator
-import com.z4.elastic.IElasticViewBinder
 import com.z4.elastic.IElasticView
 import com.z4.elastic.IElasticView.ScrollDirection.*
+import com.z4.elastic.IElasticViewBinder
 
 abstract class BaseElasticEffect(view: IElasticView) : IElasticViewBinder, View.OnTouchListener,
         Animator.AnimatorListener {
@@ -53,6 +53,7 @@ abstract class BaseElasticEffect(view: IElasticView) : IElasticViewBinder, View.
     protected val mMotionAttrs = MotionAttrs()
     protected var mViewAttrs: ViewAttrs
     protected var mOldState = IElasticViewBinder.State.Idle
+    protected var mEvents = arrayListOf<Int>()
 
     init { mViewAttrs = ViewAttrs(view) }
 
