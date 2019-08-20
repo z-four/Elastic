@@ -43,8 +43,6 @@ class VerticalElasticEffect(view: IElasticView) : BaseElasticEffect(view) {
                 mStateAttrs.scrollStarted = Math.abs(mMotionAttrs.originLast) >= MIN_DRAG_VALUE
 
                 if (mStateAttrs.canScrolling) return false
-                view.parent?.requestDisallowInterceptTouchEvent(true)
-
                 if (mStateAttrs.scrollStarted) {
                     val value = mMotionAttrs.originView + mMotionAttrs.originLast
                     val state = if (value > 0) IElasticViewBinder.State.DraggingEnd else

@@ -2,7 +2,6 @@ package com.z4.elastic
 
 import android.support.v4.view.ViewPager
 import android.support.v4.widget.NestedScrollView
-import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.AbsListView
 import android.widget.HorizontalScrollView
