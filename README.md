@@ -8,9 +8,9 @@ Over-scrolling effect library for android scrollable views
 
 
 <p align="center">
-  <img width="270px" src="/images/gif_list.gif">
-  <img width="270px" src="/images/gif_rec.gif">
-   <img width="270px" src="/images/gif_grid.gif">
+  <img width="270" src="/images/gif_list.gif">
+  <img width="270" src="/images/gif_rec.gif">
+   <img width="270" src="/images/gif_grid.gif">
 </p>
 
 # How to Use
